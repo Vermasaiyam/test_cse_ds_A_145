@@ -8,12 +8,20 @@ const fetchGithubUsers = async () => {
 
         const users = await response.json();
 
+        if (!Array.isArray(users)) {
+            throw new Error("Unexpected response format");
+        }
+
+        console.log(users);
+
         const top10Users = users.slice(0, 10);
 
         top10Users.forEach(user => console.log(user.login));
 
+        console.log(top10Users);
+
         const userDetailsDiv = document.querySelector('.user-details');
-        // userDetailsDiv.innerHTML = "";
+        userDetailsDiv.innerHTML = "";
 
         top10Users.forEach(user => {
             const userLink = document.createElement('a');
@@ -26,5 +34,6 @@ const fetchGithubUsers = async () => {
         });
     } catch (error) {
         console.error("Error fetching users:", error);
+        alert("Failed to fetch GitHub users. Please try again later.");
     }
 };
