@@ -37,3 +37,7 @@ const fetchGithubUsers = async () => {
         alert("Failed to fetch GitHub users. Please try again later.");
     }
 };
+
+const logout = () => {
+    window.location.href = "./index.html";
+}

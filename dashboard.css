@@ -36,6 +36,12 @@ button{
     border: none;
     margin: 0px 10px;
 }
+.button2{
+    background-color: #dc3545;
+}
+.button2:hover{
+    background-color: #b22432;
+}
 
 .user-details{
     margin: 20px 25px;
