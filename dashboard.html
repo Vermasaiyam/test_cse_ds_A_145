@@ -14,7 +14,7 @@
         </div>
         <div class="buttons">
             <button onclick=fetchGithubUsers()>Fetch Top 10 Github Users</button>
-            <select name="order" id="order">
+            <select name="order" id="order" onchange="sortUsers()">
                 <option value="default">Default</option>
                 <option value="ascending">Ascending</option>
                 <option value="descending">Descending</option>
